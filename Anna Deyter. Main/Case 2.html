@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Case 2</title>
+    </head>
+    <body>
+    <script>
+        "use strict";
+
+        /*2. Пользователь вводит число, операцию (сложение (+), вычитание (-), умножение (*) или деление (/)) и второе число. 
+        Вывести результат введенного действия над числами в консоль. Осуществить проверку корректности ввода данных.*/
+
+        function calculate(num1, operator, num2) {
+        switch (operator) {
+            case "+":
+            return num1 + num2;
+            case "-":
+            return num1 - num2;
+            case "*":
+            return num1 * num2;
+            case "/":
+            if (num2 === 0) {
+                return "Деление на ноль невозможно!";
+            }
+            return num1 / num2;
+            default:
+            return "Неверный оператор!";
+        }
+        }
+
+        let num1 = parseFloat(prompt("Введите первое число:"));
+        let operator = prompt("Введите операцию (+, -, *, /):");
+        let num2 = parseFloat(prompt("Введите второе число:"));
+
+        if (isNaN(num1) || isNaN(num2)) {
+        console.log("Ошибка! Введены некорректные данные.");
+        } else {
+        const result = calculate(num1, operator, num2);
+        console.log("Результат:", result);
+        }
+    </script>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Case 1</title>
+    </head>
+    <body>
+    <script>
+        "use strict";
+
+        /*1. Написать программу, которая по номеру месяца выводит его название в консоль. Номер месяца вводит пользователь (от 1 до 12).
+        Сразу после ввода исходных данных осуществить проверку корректности ввода и, в случае ввода некорректных данных, вывести 
+        сообщение об ошибке в консоль.*/
+
+        function getMonthName(monthNumber) {
+        let monthName;
+
+        if (monthNumber === 1) {
+            monthName = "Январь";
+        } else if (monthNumber === 2) {
+            monthName = "Февраль";
+        } else if (monthNumber === 3) {
+            monthName = "Март";
+        } else if (monthNumber === 4) {
+            monthName = "Апрель";
+        } else if (monthNumber === 5) {
+            monthName = "Май";
+        } else if (monthNumber === 6) {
+            monthName = "Июнь";
+        } else if (monthNumber === 7) {
+            monthName = "Июль";
+        } else if (monthNumber === 8) {
+            monthName = "Август";
+        } else if (monthNumber === 9) {
+            monthName = "Сентябрь";
+        } else if (monthNumber === 10) {
+            monthName = "Октябрь";
+        } else if (monthNumber === 11) {
+            monthName = "Ноябрь";
+        } else if (monthNumber === 12) {
+            monthName = "Декабрь";
+        } else {
+            monthName = null;
+        }
+
+        return monthName;
+        }
+
+        const monthNumber = parseInt(prompt("Введите номер месяца (от 1 до 12):"));
+
+        const monthName = getMonthName(monthNumber);
+
+        if (monthName !== null) {
+        console.log("Название месяца:", monthName);
+        } else {
+        console.log("Ошибка! Введены некорректные данные.");
+        }
+    </script>
+    </body>
+</html>

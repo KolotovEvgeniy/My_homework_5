@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Case 1</title>
+    </head>
+    <body>
+    <script>
+        "use strict";
+
+        /*1. Написать программу, которая определяет текущее время (ночь, утро, день, вечер) и день недели. Ночью будем считать время,
+        попадающее в интервал [0:00; 6:00) часов, утром [6:00; 12:00), днём - [12:00; 18:00) и вечером - [18:00; 0:00).
+        Вывести в консоль время суток и день недели в следующем виде: "Сейчас утро понедельника" и т.п.*/
+
+        function getCurrentTimeOfDay() {
+        const now = new Date();
+        const hours = now.getHours();
+        let timeOfDay;
+
+        if (hours >= 0 && hours < 6) {
+            timeOfDay = "ночь";
+        } else if (hours >= 6 && hours < 12) {
+            timeOfDay = "утро";
+        } else if (hours >= 12 && hours < 18) {
+            timeOfDay = "день";
+        } else {
+            timeOfDay = "вечер";
+        }
+
+        return timeOfDay;
+        }
+
+        function getDayOfWeek() {
+        const now = new Date();
+        const dayOfWeek = now.getDay();
+        let dayOfWeekName;
+
+        switch (dayOfWeek) {
+            case 0:
+            dayOfWeekName = "воскресенья";
+            break;
+            case 1:
+            dayOfWeekName = "понедельника";
+            break;
+            case 2:
+            dayOfWeekName = "вторника";
+            break;
+            case 3:
+            dayOfWeekName = "среды";
+            break;
+            case 4:
+            dayOfWeekName = "четверга";
+            break;
+            case 5:
+            dayOfWeekName = "пятницы";
+            break;
+            case 6:
+            dayOfWeekName = "субботы";
+            break;
+        }
+
+        return dayOfWeekName;
+        }
+
+        const timeOfDay = getCurrentTimeOfDay();
+        const dayOfWeek = getDayOfWeek();
+
+        console.log('Сейчас', timeOfDay, dayOfWeek);
+    </script>
+    </body>
+</html>

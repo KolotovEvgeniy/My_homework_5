@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Case 4</title>
+    </head>
+    <body>
+    <script>
+        "use strict";
+
+        /*4. Написать программу, которая запрашивает у пользователя значение переменной х и выводит
+        соответствующее значение функции у, заданной кусочной формулой:*/
+
+        function calculateY(x) {
+        let y;
+
+        if (x <= -1) {
+            y = -Math.pow(x, 2) - 4 * x - 3;
+        } else if (1 < x <= 1) {
+            y = x + 1;
+        } else if (x > 1) {
+            y = 2 / x;
+        } else {
+            y = null;
+        }
+
+        return y;
+        }
+
+        let x = parseFloat(prompt("Введите значение x:"));
+
+        if (isNaN(x)) {
+        console.log("Ошибка! Введено некорректное значение x.");
+        } else {
+        const y = calculateY(x);
+
+        if (y !== null) {
+            console.log("y =", y);
+        } else {
+            console.log("Ошибка! Введено некорректное значение x.");
+        }
+        }
+    </script>
+    </body>
+</html>

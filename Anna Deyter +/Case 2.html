@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Case 2</title>
+	</head>
+	<body>
+	<script>
+		"use strict";
+		
+		/*2. Написать программу, которая определяет, является ли введённый пользователем год високосным. Осуществить проверку 
+		корректности ввода пользователем исходных данных.*/
+		
+        let year;
+
+		year = parseInt(prompt("Введите год:"));
+
+        if (year % 400 === 0) {
+            console.log("Год високосный");
+        } else if (year % 4 === 0) {
+			console.log("Год високосный");
+		} else if (year % 100 === 0) {
+            console.log("Год невисокосный");
+        } else if (year % 1 === 0) {
+            console.log("Год невисокосный");
+		}
+
+        if ((year == null) || isNaN(year)) {
+        console.log("Ошибка! Введены некорректные данные.");
+        }
+    </script>
+    </body>
+</html>

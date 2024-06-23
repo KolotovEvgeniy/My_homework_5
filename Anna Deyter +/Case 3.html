@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Case 3</title>
+	</head>
+	<body>
+	<script>
+		"use strict";
+		
+		/*3. Напишите программу, которая запрашивает у пользователя координаты точек A(x1,y1) B(x2,y2) и определяет,
+		в какой квадрант (четверть) попадает каждая из точек, и какая из них дальше отстоит от начала координат.*/
+
+		let x1 = parseFloat(prompt('Введите координату x для точки A'));
+		let y1 = parseFloat(prompt('Введите координату y для точки A'));
+		let x2 = parseFloat(prompt('Введите координату x для точки B'));
+		let y2 = parseFloat(prompt('Введите координату y для точки B'));
+
+		if (
+			isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2)
+			) {
+			throw "Ошибка! Введены некорректные координаты.";
+		}
+
+		if (x1 === 0 || y1 === 0) {
+			console.log('Точка A принадлежит оси координат');
+		} else if (x1 > 0 && y1 > 0) {
+			console.log('Точка A принадлежит 1-й четверти');
+		} else if (x1 > 0 && y1 < 0) {
+			console.log('Точка A принадлежит 4-й четверти');
+		} else if (x1 < 0 && y1 > 0) {
+			console.log('Точка A принадлежит 2-й четверти');
+		} else {
+			console.log('Точка A принадлежит 3-й четверти');
+		}
+
+		if (x2 === 0 || y2 === 0) {
+			console.log('Точка B принадлежит оси координат');
+		} else if (x2 > 0 && y2 > 0) {
+			console.log('Точка B принадлежит 1-й четверти');
+		} else if (x2 > 0 && y2 < 0) {
+			console.log('Точка B принадлежит 4-й четверти');
+		} else if (x2 < 0 && y2 > 0) {
+			console.log('Точка B принадлежит 2-й четверти');
+		} else {
+			console.log('Точка B принадлежит 3-й четверти');
+		}
+
+		const distanceA = Math.sqrt(Math.pow(x1, 2) + Math.pow(y1, 2));
+		const distanceB = Math.sqrt(Math.pow(x2, 2) + Math.pow(y2, 2));
+
+		if (distanceA > distanceB) {
+			console.log("Точка A дальше отстоит от начала координат.");
+		} else if (distanceB > distanceA) {
+			console.log("Точка B дальше отстоит от начала координат.");
+		} else {
+			console.log("Точки A и B находятся на одинаковом расстоянии от начала координат.");
+		}
+	</script>
+	</body>
+</html>
